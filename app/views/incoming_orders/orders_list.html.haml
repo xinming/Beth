@@ -1,0 +1,21 @@
+%h1.heading
+  =@title
+  
+%form{:action=>'/incoming_orders/daily/search'}
+  %label='Date (YYYY-MM-DD)'
+  %input{:type=>'text', :name=>'date'}
+  %input{:type=>'submit', :value=>'View'}
+
+%table.data_list
+  %thead.header
+    %tr
+      %th.date= 'Date'
+      %th.customer_name= 'Customer'
+      %th.customer_code= 'Reference No.'
+      %th.categoy= 'Categories'
+      %th.price= 'Price'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      

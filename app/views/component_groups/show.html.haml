@@ -1,0 +1,20 @@
+%h1.heading
+  = "Component group %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Name'
+  %dd.name= h resource.try(:name)
+
+  - unless resource.components.empty?
+    %dt.label= 'Components for group'
+    %dd.components
+      %ul
+        - resource.components.each do |c|
+          %li= c
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path
+  |
+  = link_to 'Create another group', new_resource_path

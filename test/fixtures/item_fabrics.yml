@@ -1,0 +1,5 @@
+basic:
+  item_id: 1
+  fabric_id: 1
+  amount: 9.99
+  unit: Hello

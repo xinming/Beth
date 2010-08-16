@@ -1,0 +1,36 @@
+%h1.heading
+  = "Assign Inventory Items"
+
+-semantic_form_for(resource) do |form|
+  -resource.items.each do |item|
+    =item.item_type
+    
+    %table.data_list
+      %thead.header
+        %tr
+          %th.fabric_code= "Fabrics"
+          %th.fabric_photo= 'Photo'
+          %th.fabric_name= 'Name'
+          %th.fabric_amount= 'Amount'
+          %th.fabric_unit= 'Unit'
+          %th.actions= 'Actions'
+      %tbody.fabrics.resources
+        - item.item_fabrics.each do |resource|
+          = render 'fabric', :resource => resource
+    
+    %table.data_list
+      %thead.header
+        %tr
+          %th.style= "Style"
+          %th.component= 'Component'
+          %th.inventory_item= 'Inventory Item'
+          %th.amount= 'Amount'
+          %th.unit= 'Unit'
+          %th.actions= 'Actions'
+      %tbody.items.resources
+        - item.values.each do |resource|
+          = render 'inventory', :resource => resource
+- content_for :sub_menu do 
+  %ul.actions
+    %li= link_to 'Commit to Inventory', commit_inventory_path, :class=>'check_link'
+    %li= link_to 'Back to Order Details', resource_path, :class => "back_link"

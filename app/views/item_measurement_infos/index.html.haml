@@ -1,0 +1,18 @@
+%h1.heading
+  = "Item measurement infos"
+  
+%p.actions
+  = link_to 'New Item measurement info', new_resource_path
+  
+%table
+  %thead.header
+    %tr
+      %th.item_id= 'Item'
+      %th.measurement_info_id= 'Measurement info'
+      %th.value= 'Value'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

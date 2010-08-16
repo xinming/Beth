@@ -1,0 +1,18 @@
+%h1.heading
+  = "Inventory logs"
+  
+%p.actions
+  = link_to 'New Inventory log', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.time= "Created"
+      %th.inventory_item_type_id= 'Inventory item type'
+      %th.amount= 'Amount'
+      %th.order_id= 'Source'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      

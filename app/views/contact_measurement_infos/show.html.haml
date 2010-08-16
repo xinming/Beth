@@ -1,0 +1,15 @@
+%h1.heading
+  = "Contact measurement info %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Contact'
+  %dd.contact_id= h resource.try(:contact_id)
+  %dt.label= 'Measurement info'
+  %dd.measurement_info_id= h resource.try(:measurement_info_id)
+  %dt.label= 'Value'
+  %dd.value= h resource.try(:value)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

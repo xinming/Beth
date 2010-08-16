@@ -1,0 +1,13 @@
+
+%ul.item_type_cost
+  %li
+    %strong= form.object.item_type
+    = "(" + remove_item_type_cost_link(form) + ")"
+    ='blah'
+  = form.input :item_type_id, :as => :hidden
+  -# if form.object.new_record?
+    - form.object.item_type.component_groups.each do |cg|
+      - form.object.values.build :component_group => cg
+  -# form.semantic_fields_for :values do |value|
+    = value.input :component_group_id, :as => :hidden
+    = value.input :value, :label => value.object.component_group.name, :collection => value.object.component_group.components, :as => :radio

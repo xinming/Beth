@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item_component_value_id: 1
+  inventory_item_type_id: 1
+  amount: 9.99
+
+two:
+  item_component_value_id: 1
+  inventory_item_type_id: 1
+  amount: 9.99

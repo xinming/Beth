@@ -1,0 +1,68 @@
+%h2.heading
+  = "Orders %s" % resource.id
+.data_list
+  - content_tag_for(:dl, resource) do
+    
+    %dt.label= 'Orderer'
+    %dd.orderer
+      -if !resource.orderer.nil?
+        = link_to resource.orderer, contact_url(resource.orderer)
+    %dt.label= 'Referrer'
+    %dd.referrer
+      -if !resource.referrer.nil?
+        = link_to resource.referrer, contact_url(resource.referrer)
+    
+    %dt.label= 'Items'
+    %dd.items_cache= h resource.try(:items_cache)
+    
+    %dt.label= 'Items List'
+    - if resource.items.size > 0
+      %dd.items_list
+        %ol
+          - resource.items.each do |item|
+            %li
+              = "%s<br/>" % item.item_type
+              = "Fabrics<br/>"
+              - item.fabrics.each do |fabric|
+                =image_tag fabric.photo.url(:thumb)
+                =fabric.code
+                =" (%s)<br/>" % fabric.name
+                
+              %h5.heading
+                = "Measurement information"
+              = link_to 'Add measurement information', add_item_measurement_path(item)
+              %table.data_list
+                %thead.header
+                  %tr
+                    %th.name= 'Name'
+                    %th.item_type= 'Item Type'
+                    %th.value= 'Value'
+                    %th.actions= 'Actions'
+                %tbody.items.resources
+                  - item.item_measurement_infos.each do |info|
+                    = render 'measurement_info', :resource => info
+                
+                
+                
+              -# item.values.each do |value|    
+                = "%s: " % value.component_group
+                = "%s<br/>" % value.component
+ 
+ 
+    %dt.label= 'Exchange rate'
+    %dd.exchange_rate= h resource.try(:exchange_rate)
+    
+    %dt.label= 'Tax'
+    %dd.tax= h resource.try(:tax)
+    
+    %dt.label= 'Total'
+    %dd.total= h resource.try(:total)
+    
+    %dt.label= 'Remarks'
+    %dd.remarks= h resource.try(:remarks)
+  
+- content_for :sub_menu do 
+  %ul.actions
+    %li= link_to 'Edit', edit_resource_path(resource), :class => "edit_link"
+    %li= link_to 'Assign Inventory Items', check_path(resource), :class=>'check_link'
+    %li= link_to 'Back to Order Listings', collection_path, :class => "back_link"

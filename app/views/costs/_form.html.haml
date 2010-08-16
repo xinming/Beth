@@ -1,0 +1,6 @@
+- form.inputs do
+  %strong
+    = form.object.item.item_type.name
+    = " - "
+    = form.object.item_type_cost.name
+  = form.input :amount, :label => 'Cost'

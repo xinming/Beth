@@ -1,0 +1,16 @@
+%h1.heading
+  = "Item component values"
+  
+%p.actions
+  = link_to 'New Item component value', new_resource_path
+  
+%table
+  %thead.header
+    %tr
+      %th.value= 'Value'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

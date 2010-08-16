@@ -1,0 +1,10 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.fabric_code
+    = h resource.fabric.try(:code)
+  %td.fabric_photo= image_tag resource.fabric.photo.url(:thumb)
+  %td.fabric_name= h resource.fabric.try(:name)
+  %td.fabric_amount= h resource.try(:amount)
+  %td.fabric_unit= h resource.try(:unit)
+  %td.actions
+    = link_to 'Edit', edit_item_fabric_path(resource)
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

@@ -1,0 +1,9 @@
+%h1.heading
+  = 'New Item component inventory'
+- semantic_form_for(resource) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', collection_path

@@ -1,0 +1,72 @@
+(in /home/mpbod/Work/becky)
+    component_inventories GET    /component_inventories(.:format)             {:controller=>"component_inventories", :action=>"index"}
+                          POST   /component_inventories(.:format)             {:controller=>"component_inventories", :action=>"create"}
+  new_component_inventory GET    /component_inventories/new(.:format)         {:controller=>"component_inventories", :action=>"new"}
+ edit_component_inventory GET    /component_inventories/:id/edit(.:format)    {:controller=>"component_inventories", :action=>"edit"}
+      component_inventory GET    /component_inventories/:id(.:format)         {:controller=>"component_inventories", :action=>"show"}
+                          PUT    /component_inventories/:id(.:format)         {:controller=>"component_inventories", :action=>"update"}
+                          DELETE /component_inventories/:id(.:format)         {:controller=>"component_inventories", :action=>"destroy"}
+     inventory_item_types GET    /inventory_item_types(.:format)              {:controller=>"inventory_item_types", :action=>"index"}
+                          POST   /inventory_item_types(.:format)              {:controller=>"inventory_item_types", :action=>"create"}
+  new_inventory_item_type GET    /inventory_item_types/new(.:format)          {:controller=>"inventory_item_types", :action=>"new"}
+ edit_inventory_item_type GET    /inventory_item_types/:id/edit(.:format)     {:controller=>"inventory_item_types", :action=>"edit"}
+      inventory_item_type GET    /inventory_item_types/:id(.:format)          {:controller=>"inventory_item_types", :action=>"show"}
+                          PUT    /inventory_item_types/:id(.:format)          {:controller=>"inventory_item_types", :action=>"update"}
+                          DELETE /inventory_item_types/:id(.:format)          {:controller=>"inventory_item_types", :action=>"destroy"}
+    item_component_values GET    /item_component_values(.:format)             {:controller=>"item_component_values", :action=>"index"}
+                          POST   /item_component_values(.:format)             {:controller=>"item_component_values", :action=>"create"}
+ new_item_component_value GET    /item_component_values/new(.:format)         {:controller=>"item_component_values", :action=>"new"}
+edit_item_component_value GET    /item_component_values/:id/edit(.:format)    {:controller=>"item_component_values", :action=>"edit"}
+     item_component_value GET    /item_component_values/:id(.:format)         {:controller=>"item_component_values", :action=>"show"}
+                          PUT    /item_component_values/:id(.:format)         {:controller=>"item_component_values", :action=>"update"}
+                          DELETE /item_component_values/:id(.:format)         {:controller=>"item_component_values", :action=>"destroy"}
+                    items GET    /items(.:format)                             {:controller=>"items", :action=>"index"}
+                          POST   /items(.:format)                             {:controller=>"items", :action=>"create"}
+                 new_item GET    /items/new(.:format)                         {:controller=>"items", :action=>"new"}
+                edit_item GET    /items/:id/edit(.:format)                    {:controller=>"items", :action=>"edit"}
+                     item GET    /items/:id(.:format)                         {:controller=>"items", :action=>"show"}
+                          PUT    /items/:id(.:format)                         {:controller=>"items", :action=>"update"}
+                          DELETE /items/:id(.:format)                         {:controller=>"items", :action=>"destroy"}
+        measurement_infos GET    /measurement_infos(.:format)                 {:controller=>"measurement_infos", :action=>"index"}
+                          POST   /measurement_infos(.:format)                 {:controller=>"measurement_infos", :action=>"create"}
+     new_measurement_info GET    /measurement_infos/new(.:format)             {:controller=>"measurement_infos", :action=>"new"}
+    edit_measurement_info GET    /measurement_infos/:id/edit(.:format)        {:controller=>"measurement_infos", :action=>"edit"}
+         measurement_info GET    /measurement_infos/:id(.:format)             {:controller=>"measurement_infos", :action=>"show"}
+                          PUT    /measurement_infos/:id(.:format)             {:controller=>"measurement_infos", :action=>"update"}
+                          DELETE /measurement_infos/:id(.:format)             {:controller=>"measurement_infos", :action=>"destroy"}
+               item_types GET    /item_types(.:format)                        {:controller=>"item_types", :action=>"index"}
+                          POST   /item_types(.:format)                        {:controller=>"item_types", :action=>"create"}
+            new_item_type GET    /item_types/new(.:format)                    {:controller=>"item_types", :action=>"new"}
+           edit_item_type GET    /item_types/:id/edit(.:format)               {:controller=>"item_types", :action=>"edit"}
+                item_type GET    /item_types/:id(.:format)                    {:controller=>"item_types", :action=>"show"}
+                          PUT    /item_types/:id(.:format)                    {:controller=>"item_types", :action=>"update"}
+                          DELETE /item_types/:id(.:format)                    {:controller=>"item_types", :action=>"destroy"}
+         component_groups GET    /component_groups(.:format)                  {:controller=>"component_groups", :action=>"index"}
+                          POST   /component_groups(.:format)                  {:controller=>"component_groups", :action=>"create"}
+      new_component_group GET    /component_groups/new(.:format)              {:controller=>"component_groups", :action=>"new"}
+     edit_component_group GET    /component_groups/:id/edit(.:format)         {:controller=>"component_groups", :action=>"edit"}
+          component_group GET    /component_groups/:id(.:format)              {:controller=>"component_groups", :action=>"show"}
+                          PUT    /component_groups/:id(.:format)              {:controller=>"component_groups", :action=>"update"}
+                          DELETE /component_groups/:id(.:format)              {:controller=>"component_groups", :action=>"destroy"}
+               components GET    /components(.:format)                        {:controller=>"components", :action=>"index"}
+                          POST   /components(.:format)                        {:controller=>"components", :action=>"create"}
+            new_component GET    /components/new(.:format)                    {:controller=>"components", :action=>"new"}
+           edit_component GET    /components/:id/edit(.:format)               {:controller=>"components", :action=>"edit"}
+                component GET    /components/:id(.:format)                    {:controller=>"components", :action=>"show"}
+                          PUT    /components/:id(.:format)                    {:controller=>"components", :action=>"update"}
+                          DELETE /components/:id(.:format)                    {:controller=>"components", :action=>"destroy"}
+                   orders GET    /orders(.:format)                            {:controller=>"orders", :action=>"index"}
+                          POST   /orders(.:format)                            {:controller=>"orders", :action=>"create"}
+                new_order GET    /orders/new(.:format)                        {:controller=>"orders", :action=>"new"}
+               edit_order GET    /orders/:id/edit(.:format)                   {:controller=>"orders", :action=>"edit"}
+                    order GET    /orders/:id(.:format)                        {:controller=>"orders", :action=>"show"}
+                          PUT    /orders/:id(.:format)                        {:controller=>"orders", :action=>"update"}
+                          DELETE /orders/:id(.:format)                        {:controller=>"orders", :action=>"destroy"}
+           add_item_order POST   /orders/new/add_item/:item_type/:child_index {:controller=>"orders", :action=>"add_item"}
+                 contacts GET    /contacts(.:format)                          {:controller=>"contacts", :action=>"index"}
+                          POST   /contacts(.:format)                          {:controller=>"contacts", :action=>"create"}
+              new_contact GET    /contacts/new(.:format)                      {:controller=>"contacts", :action=>"new"}
+             edit_contact GET    /contacts/:id/edit(.:format)                 {:controller=>"contacts", :action=>"edit"}
+                  contact GET    /contacts/:id(.:format)                      {:controller=>"contacts", :action=>"show"}
+                          PUT    /contacts/:id(.:format)                      {:controller=>"contacts", :action=>"update"}
+                          DELETE /contacts/:id(.:format)                      {:controller=>"contacts", :action=>"destroy"}

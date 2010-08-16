@@ -1,0 +1,4 @@
+basic:
+  inventory_item_type_id: 1
+  amount: 9.99
+  order_id: 1

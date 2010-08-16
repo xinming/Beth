@@ -1,0 +1,15 @@
+%h1.heading
+  = "Component inventory %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Component'
+  %dd.component= h resource.try(:component)
+  %dt.label= 'Inventory item type'
+  %dd.inventory_item_type= h resource.try(:inventory_item_type)
+  %dt.label= 'Amount'
+  %dd.amount= h resource.try(:amount)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

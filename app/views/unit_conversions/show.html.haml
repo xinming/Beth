@@ -1,0 +1,15 @@
+%h1.heading
+  = "Unit conversion %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Unit1'
+  %dd.unit1= h resource.try(:unit1)
+  %dt.label= 'Unit2'
+  %dd.unit2= h resource.try(:unit2)
+  %dt.label= 'Ratio'
+  %dd.ratio= h resource.try(:ratio)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

@@ -1,0 +1,9 @@
+.bundle
+log/*.log
+tmp/**/*
+*.sw*
+vendor/gems/gems
+vendor/gems/specifications
+vendor/gems/doc
+vendor/gems/environment.rb
+rerun.txt

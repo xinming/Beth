@@ -1,0 +1,13 @@
+%h1.heading
+  = "Customer %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Name'
+  %dd.name= h resource.try(:name)
+  %dt.label= 'Code'
+  %dd.code= h resource.try(:code)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

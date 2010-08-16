@@ -1,0 +1,16 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.name= h resource.try(:name)
+  %td.address= h resource.try(:address)
+  %td.country= h resource.try(:country)
+  %td.email= h resource.try(:email)
+  %td.tel= h resource.try(:tel)
+  %td.is_client= h resource.try(:is_client)
+  %td.is_supplier= h resource.try(:is_supplier)
+  -#raise resource.contact_group.inspect
+  %td.contact_group
+    -if resource.in_group?
+      =link_to resource.contact_group.name, contact_group_url(resource.contact_group)
+  %td.actions
+    = link_to 'Show', resource_path(resource)
+    = link_to 'Edit', edit_resource_path(resource)
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

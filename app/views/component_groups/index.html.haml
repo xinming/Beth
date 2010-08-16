@@ -1,0 +1,20 @@
+%h1.heading
+  = "Component groups"
+  
+%p.actions
+  = link_to 'New Component group', new_resource_path
+  = link_to 'Components', components_url  
+  = link_to 'Item Types', item_types_url  
+  
+
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.item_type= 'Belongs to'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

@@ -1,0 +1,21 @@
+%h1.heading
+  = "Fabrics"
+  
+%p.actions
+  = link_to 'New Fabric', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.code= 'Code'
+      %th.name= 'Name'
+      %th.description= 'Description'
+      %th.price_per_unit= 'Price per unit'
+      %th.unit= 'Unit'
+      %th.photo= 'Photo'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

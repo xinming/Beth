@@ -1,0 +1,10 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.component= h resource.try(:component)
+  %td.inventory_item_type= h resource.try(:inventory_item_type)
+  %td.amount= h resource.try(:amount)
+  %td.actions
+    = link_to 'Show', resource_path(resource)
+    |
+    = link_to 'Edit', edit_resource_path(resource)
+    |
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

@@ -1,0 +1,9 @@
+- semantic_form_for(Order.new) do |form|
+  - form.object.items.build :item_type => ItemType.find(@item_type)
+  - form.semantic_fields_for :items, :child_index => @child_index do |item|
+    %strong= item.object.item_type
+    - if item.object.new_record?
+      - item.object.item_type.component_groups.each do |cg|
+        - item.object.values.build :component_group => cg
+    - item.semantic_fields_for :values do |value|
+      = value.input :value, :label => value.object.component_group.name, :collection => value.object.component_group.components, :as => :radio

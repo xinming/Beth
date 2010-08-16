@@ -1,0 +1,18 @@
+%h1.heading
+  = "Costs"
+  
+%p.actions
+  = link_to 'New Cost', new_resource_path
+  
+%table
+  %thead.header
+    %tr
+      %th.item_id= 'Item'
+      %th.item_type_cost_id= 'Item type cost'
+      %th.amount= 'Amount'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

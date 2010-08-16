@@ -1,0 +1,3 @@
+module MeasurementInfosHelper
+  
+end

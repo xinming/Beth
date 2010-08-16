@@ -1,0 +1,7 @@
+basic:
+  name: Hello
+  address: Lorem ipsum dolor sit amet...
+  country: Hello
+  email: Hello
+  is_supplier: false
+  is_client: false

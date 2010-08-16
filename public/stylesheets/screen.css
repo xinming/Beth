@@ -1,0 +1,179 @@
+body { background-color: #eee; color: #333;}
+a { color: #257FD0;}
+a:hover { color: #333;}
+
+#top { padding: 0.75em 0; background-color: #555; color: #eee; margin-bottom: 1.5em; }
+#top h1 { color: #fff; font-size: 15px; display: inline; text-shadow: 0px -1px 1px #111;}
+#top img { vertical-align: -3px; margin-right: 5px;}
+#top a { font-size: 11px;}
+#top_logo { text-align: left;}
+#top_menu { text-align: right;}
+
+#notifications ul li { margin-left: 0; list-style: none; cursor: pointer;}
+#notifications ul li { 
+  background-color: #fff;
+  margin-bottom: 0.375em; 
+  padding: 0.375em 0.75em; 
+  border: 1px solid #ccc; 
+  -webkit-box-shadow: 0px 3px 4px #ccc; -moz-box-shadow: 0px 3px 4px #ccc;
+}
+#notifications ul li.error { background-color: #fcc; border-color: #f99;}
+#notifications ul li.warning { background-color: #ffc; border-color: #ff0;}
+#notifications ul li.success { background-color: #cfc; border-color: #0d0;}
+
+#notifications ul li:hover { 
+  background-image: url("../images/icons/grey_cross.png");
+  background-position: 915px center;
+  background-repeat: no-repeat;
+}
+
+#notifications ul li ul li { margin-left: 20px; list-style: circle; }
+#notifications ul li ol li { margin-left: 20px; list-style: decimal; }
+
+#sidebar { margin-top: 0.1875em; }
+#sidebar li { margin-left: 0; list-style: none;}
+
+/* Sidebar Block Titles */
+#sidebar li a.title { 
+  text-decoration: none; color: #333;
+  display: block;
+  width: 138px;
+  padding: 0.375em 10px;
+  background: #eee url("../images/white-line.png") repeat-x top center;
+  border: 1px solid #ccc;
+  border-bottom-width: 0;
+}
+#sidebar li a:hover { background-color: #dfdfdf;}
+#sidebar li a.active { background-color: #ccc; border: 1px solid #aaa;}
+#sidebar li a.title img { vertical-align: -3px; margin-right: 5px; }
+#sidebar li.first a.title {  
+  /* Bottom borders is not rounded. */
+  -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;
+}
+#sidebar li.last a.title {  
+  /* Top border is not rounded. */
+  border-bottom-width: 1px;
+  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;
+}
+
+/* Sidebar Expandable Toggle */
+#sidebar li a.toggle { cursor: pointer; display: block; float: right; margin-top: -21px; margin-right: 5px; width: 13px; height: 13px; background: url("../images/icons/bullet_arrow_down.png") no-repeat -1px -1px; padding: 1px;}
+#sidebar li a.toggle:hover { display: block; background-color: #ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; border: 1px solid #999; padding: 0px; -webkit-box-shadow: 0px -1px 1px #444;  -moz-box-shadow: 0px -1px 1px #444;}
+#sidebar li.expanded a.toggle { background-image: url("../images/icons/bullet_arrow_up.png"); background-position: -1px -2px;}
+#sidebar li.expanded a.toggle:hover { background-color: #ccc; }
+
+
+/* Sidebar Block Content */
+#sidebar li .content { display: none;}
+#sidebar li.expanded a.title { border-bottom-width: 1px;}
+#sidebar li.expanded .content {display: block;}
+#sidebar li.last.expanded a.title { 
+  -webkit-border-bottom-left-radius: 0; -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0; -webkit-border-bottom-right-radius: 0;
+}
+
+/* You need to add a div for bottom if the last item is expanded */
+#sidebar li.last.expanded .bottom { 
+  background-color: #fff; 
+  height: 5px;
+  width: 158px; 
+  border: 1px solid #ccc; 
+  border-top: none;
+  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;  
+}
+
+#sidebar li .content { background-color: #fff; width: 158px; border: 1px solid #ccc; border-bottom: none; border-top: none; }
+#sidebar li .content li a, #sidebar li .content p { padding: 0.375em 10px; }
+#sidebar li .content li a { display: block; font-size: 11px; text-decoration: none;}
+#sidebar li .content li a:hover { background-color: #def; }
+#sidebar li .content li.active a { background-color: #efefef; color: #333;}
+#sidebar li .content li a img { vertical-align: -3px; margin-right: 5px; }
+#sidebar li .content ul { margin-bottom: 0;}
+#sidebar li .content p { color: #666; margin-bottom: 0; font-size: 10px; padding: 0.75em 10px;}
+#sidebar li .content p em { display: block; font-weight: bold; font-style: normal; margin-bottom: 2px;}
+#sidebar li.last .content { 
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.375em;
+  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;
+}
+
+#main h1 { text-shadow: 0px 2px 1px #fff; }
+#main h1 img {
+  width: 25px; height: 25px; vertical-align: -3px; margin-right: 10px;
+}
+
+#main .box { 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+#main .box * { padding: 0.375em 10px;}
+#main .box h2 { 
+  -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;
+  font-size: 15px; margin-bottom: 0; background: #eee url("../images/white-line.png") top center repeat-x; 
+  border-bottom: 1px solid #ccc;
+  text-shadow: 0px 1px 0px #fff;
+}
+#main .box p { margin-bottom: 0;}
+
+#main .clear { height: 20px;}
+
+#shortcuts { -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #ccc; width: 38px; background: #eee url("../images/white-line.png") repeat-x top center;}
+#shortcuts:hover { background-color: #ddd; border: 1px solid #999; }
+#shortcuts ul { margin: 0.75em 0; }
+#shortcuts li { list-style: none; margin-left: 0; margin-bottom: 0.375em; text-align: center;}
+#shortcuts li a { text-decoration: none;}
+#shortcuts li a span { display: none;}
+#shortcuts li.seperator { border-top: 1px solid #ccc; border-bottom: 1px solid #fff; margin: 10px 5px;}
+#shortcuts:hover li.seperator { border-top: 1px solid #999;}
+/*#shortcuts li a:hover span { display: block; position: relative; right: 70px; bottom: 20px; height: 0;}
+*/
+#footer p { font-size: 11px; color: #666;}
+#footer p h1 { font-size: 11px; display: inline;}
+#footer p a { text-transform: uppercase; }
+#footer .right p { text-align: right;}
+
+/* Buttons */
+a.button { 
+  background: #000 url("../images/button-overlay.png") repeat-x;
+  -moz-border-radius: 3px; -webkit-border-radius: 5px;
+  color: #ccc;
+  text-shadow: 0px -1px 1px #111;
+  border: none;
+  padding: 3px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+a.button:hover {
+  color: #fff;
+  background-color: #111;
+}
+/* Buttons Colors */
+.button.red, .button.green, .button.blue {color: #fff;}
+.button.red { 
+  text-shadow: 0px -1px 1px #c00;
+  background-color: #d00;
+}
+a.button.red:hover {
+  background-color: #f00;  
+}
+.button.green { 
+  text-shadow: 0px -1px 1px #0c0;
+  background-color: #0d0;
+}
+a.button.green:hover {
+  background-color: #0f0;  
+}
+.button.blue { 
+  text-shadow: 0px -1px 1px #00c;
+  background-color: #00d;
+}
+a.button.blue:hover {
+  background-color: #00f;  
+}

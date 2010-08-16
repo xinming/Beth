@@ -1,0 +1,23 @@
+%h1.heading
+  = "Orders"
+  
+ 
+%table.data_list
+  %thead.header
+    %tr
+      %th.time= "Created"
+      %th.orderer= 'Orderer'
+      %th.referrer= 'Referrer'
+      %th.items= 'Items'
+      %th.exchange_rate= 'Exchange rate'
+      %th.total= 'Total'
+      %th.remarks= 'Remarks'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+- content_for :sub_menu do
+  %ul.actions
+    %li= link_to 'New Orders', new_resource_path, :class => :add_link
+      
+= will_paginate(collection)

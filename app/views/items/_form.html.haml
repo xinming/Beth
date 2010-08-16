@@ -1,0 +1,12 @@
+- form.object.item_type = ItemType.first #Temp
+
+- form.inputs do
+  = form.input :order, :label => "For Order"
+  = form.input :item_type, :label => "Item Type"
+
+  - if form.object.new_record?
+    - form.object.item_type.component_groups.each do |cg|
+      - form.object.values.build :component_group => cg
+
+  - form.inputs :for => :values do |value|
+    = value.input :value, :label => value.object.component_group.name, :collection => value.object.component_group.components, :as => :radio

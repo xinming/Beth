@@ -1,0 +1,17 @@
+%h1.heading
+  = "Item fabric %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Item'
+  %dd.item_id= h resource.try(:item_id)
+  %dt.label= 'Fabric'
+  %dd.fabric_id= h resource.try(:fabric_id)
+  %dt.label= 'Amount'
+  %dd.amount= h resource.try(:amount)
+  %dt.label= 'Unit'
+  %dd.unit= h resource.try(:unit)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

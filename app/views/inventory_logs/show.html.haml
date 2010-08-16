@@ -1,0 +1,15 @@
+%h1.heading
+  = "Inventory log %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Inventory item type'
+  %dd.inventory_item_type_id= h resource.try(:inventory_item_type_id)
+  %dt.label= 'Amount'
+  %dd.amount= h resource.try(:amount)
+  %dt.label= 'Order'
+  %dd.order_id= h resource.try(:order_id)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

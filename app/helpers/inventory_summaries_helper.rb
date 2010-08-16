@@ -1,0 +1,3 @@
+module InventorySummariesHelper
+  
+end

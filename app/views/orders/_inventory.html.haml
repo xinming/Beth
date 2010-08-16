@@ -1,0 +1,18 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.style
+    = h resource.try(:component_group)
+  %td.component= h resource.try(:component)
+  %td
+  %td
+  %td
+  %td= link_to 'Add new inventory item', add_inventory_path(resource.id)
+  - resource.item_component_inventories.each do |inv|
+    - content_tag_for(:tr, inv, :class => cycle(:odd, :even)) do
+      %td
+      %td
+      %td.inventory_item= inv.inventory_item_type
+      %td.amount= inv.amount
+      %td.unit= h inv.inventory_item_type.try(:unit)
+      %td.actions
+        = link_to 'Edit', edit_item_component_inventory_path(inv.id)
+        = link_to 'Destroy', inv, :confirm => 'Are you sure?', :method => :delete

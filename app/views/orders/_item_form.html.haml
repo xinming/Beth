@@ -1,0 +1,15 @@
+- # semantic_form_for(Order.new) do |form|
+- # form.object.items.build :item_type => ItemType.find(item_type_id)
+- # form.semantic_fields_for :items, :child_index => child_index do |item|
+%ul.item
+  %li
+    %strong= raise form.object.inspect
+    = "(" + remove_item_link(form) + ")"
+  = form.input :fabrics, :label=>'Fabrics'
+  = form.input :item_type_id, :as => :hidden
+  - if form.object.new_record?
+    - form.object.item_type.component_groups.each do |cg|
+      - form.object.values.build :component_group => cg
+  - form.semantic_fields_for :values do |value|
+    = value.input :component_group_id, :as => :hidden
+    = value.input :value, :label => value.object.component_group.name, :collection => value.object.component_group.components, :as => :radio

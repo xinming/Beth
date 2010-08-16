@@ -1,0 +1,24 @@
+%h1.heading
+  = "Contacts"
+  
+- content_for :sub_menu do 
+  %ul.actions
+    %li= link_to 'New Contact', new_resource_path, :class => :add_link
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.address= 'Address'
+      %th.country= 'Country'
+      %th.email= 'Email'
+      %th.tel= 'Tel'
+      %th.is_client= 'Is client'
+      %th.is_supplier= 'Is supplier'
+      %th.contact_group= 'Contact Group'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

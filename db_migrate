@@ -1,0 +1,103 @@
+Script started on Thu 10 Jun 2010 09:39:32 AM ICT
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ rake db:migrate
+(in /mnt/dropbox/My Dropbox/Development/becky)
+==  CreateItemComponentInventories: migrating =================================
+-- create_table(:item_component_inventories)
+   -> 0.0034s
+==  CreateItemComponentInventories: migrated (0.0035s) ========================
+
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ script/dbs[Kconsole
+SQLite version 3.6.22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .e[Ktables
+component_groups            item_component_values     
+component_inventories       item_types                
+components                  items                     
+contacts                    measurement_infos         
+inventory_item_types        orders                    
+item_component_inventories  schema_migrations         
+sqlite> show item_component_inventories;
+Error: near "show": syntax error
+sqlite> display item_component_inventories;
+Error: near "display": syntax error
+sqlite> select * from items where order+[K+_[K[K_id=2
+   ...> ;
+21|2|1|2010-05-30 08:18:35|2010-05-30 08:18:35
+sqlite> select * from item_component_values where item_id=21
+   ...> ;
+95|21|1|1
+96|21|2|7
+97|21|3|12
+98|21|4|9
+99|21|5|15
+sqlite> select * from item_component_inventories;
+sqlite> insert into item_component_inventories (item_component_value_id, invento ry_item_type) values (95,
+   ...> ;
+Error: near ";": syntax error
+sqlite> select * from inventory_item_types where name like 'whi[K[K[KWhite Normal Buto[Kton' ;
+2|White Normal Button|2010-05-30 20:25:50|2010-05-30 20:55:41|Buttons
+sqlite> select * from inventory_item_types where name like 'White Normal Button';;[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C'; [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P';
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';B';l';u';e'; ';F';a';b';r';i';c';
+1|Blue Fabric|2010-05-30 20:25:38|2010-05-30 20:54:45|m
+sqlite> select * from inventory_item_types where name like 'Blue Fabric';White Normal Button';;[A[C[C[C[C[C[C[C;[K
+[K[A[C[C[C[C[C[C[C[C[Cinsert into item_component_inventories (item_component_value_id, inventorry_item_type) values (95,[1@_[1@i[1@d[1@,[1@ [1@a[1@m[1@o[1@u[1@n[1@t[C[C[C[C[C[C[C[C[C[C[C[C[C1,55);
+sqlite> insert into item_component_inventories (item_component_value_id, inventorry_item_type_id, amount) values (95,1,55);[C[C[C[C[1P,55);2,55);[C[C[C[1P);[1P);6);6);
+sqlite> select * from item_component_inventories;
+1|95|1|55||
+2|95|2|66||
+sqlite> [Ksqlite> select * from item_component_inventories;[C[C[C[C[C[C[C[Cinsert into item_component_inventories (item_component_value_id, inventory_item_type_id, amount) values (95,2,66);1,55);[C[C[C[C[C[C[C[C[49Pselect * from inventory_item_types where name like 'Blue Fabric';White Normal Button';[C[C[C[C[C[C[C[C;[Kinsert into item_component_inventories (item_component_value_id, inventory_item_type) values (95,[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgenerate migraation create item_component_inventories[1Pitem_component_inventories[C[C[C[C[C[C[C[C[C[C[C[C_item_component_inventories[C[C[C[C[C[C[C[C[C[C[C[C[C
+      exists  db/migrate
+Another migration is already named create_item_component_inventories: db/migrate/20100609144040_create_item_component_inventories.rb
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ script/dbconsole
+SQLite version 3.6.22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .tables
+component_groups       inventory_item_types   measurement_infos    
+component_inventories  item_component_values  orders               
+components             item_types             schema_migrations    
+contacts               items                
+sqlite> .exit
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ script [K/db[K[K[K db:migrate
+Script started, file is db:migrate
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ rake db:migrate
+(in /mnt/dropbox/My Dropbox/Development/becky)
+==  CreateItemComponentInventories: migrating =================================
+-- create_table(:item_component_inventories)
+   -> 0.0034s
+==  CreateItemComponentInventories: migrated (0.0035s) ========================
+
+]0;xion@xion-laptop: /mnt/dropbox/My Dropbox/Development/beckyxion@xion-laptop:/mnt/dropbox/My Dropbox/Development/becky$ script/dbs[Kconsole
+SQLite version 3.6.22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .e[Ktables
+component_groups            item_component_values     
+component_inventories       item_types                
+components                  items                     
+contacts                    measurement_infos         
+inventory_item_types        orders                    
+item_component_inventories  schema_migrations         
+sqlite> show item_component_inventories;
+Error: near "show": syntax error
+sqlite> display item_component_inventories;
+Error: near "display": syntax error
+sqlite> select * from items where order+[K+_[K[K_id=2
+   ...> ;
+21|2|1|2010-05-30 08:18:35|2010-05-30 08:18:35
+sqlite> select * from item_component_values where item_id=21
+   ...> ;
+95|21|1|1
+96|21|2|7
+97|21|3|12
+98|21|4|9
+99|21|5|15
+sqlite> select * from item_component_inventories;
+sqlite> insert into item_component_inventories (item_component_value_id, invento ry_item_type) values (95,
+   ...> ;
+Error: near ";": syntax error
+sqlite> select * from inventory_item_types where name like 'whi[K[K[KWhite Normal Buto[Kton' ;
+2|White Normal Button|2010-05-30 20:25:50|2010-05-30 20:55:41|Buttons
+sqlite> select * from inventory_item_types where name like 'White Normal Button';;[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C'; [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P';
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';[1P';B';l';u';e'; ';F';

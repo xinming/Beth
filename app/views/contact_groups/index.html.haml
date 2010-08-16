@@ -1,0 +1,17 @@
+%h1.heading
+  = "Contact groups"
+  
+%p.actions
+  = link_to 'New Contact group', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.commission= 'Commission %'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

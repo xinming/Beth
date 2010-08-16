@@ -1,0 +1,21 @@
+%h1.heading
+  = "Inventory item types"
+  
+%p.actions
+  = link_to 'New Inventory item type', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.code= 'Code'
+      %th.photo= 'Photo'
+      %th.name= 'Name'
+      %th.description= 'Description'
+      %th.price_per_unit= 'Price per unit'
+      %th.unit= 'Unit'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

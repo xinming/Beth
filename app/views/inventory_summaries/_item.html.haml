@@ -1,0 +1,7 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.time
+    = short_time resource.updated_at
+  %td.inventory_item_type_id= h resource.try(:inventory_item_type)
+  %td.amount= h resource.try(:amount)
+  %td.actions
+    = link_to 'Show', inventory_logs_by_type_path(resource.inventory_item_type_id)

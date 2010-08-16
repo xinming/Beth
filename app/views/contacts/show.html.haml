@@ -1,0 +1,49 @@
+%h1.heading
+  = "Contact %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Contact Group'
+  %dd.contact_group= h resource.contact_group.try(:name)
+  %dt.label= 'Commission %'
+  %dd.commission= resource.commission
+  %dt.label= 'Name'
+  %dd.name= h resource.try(:name)
+  %dt.label= 'Address'
+  %dd.address= h resource.try(:address)
+  %dt.label= 'Country'
+  %dd.country= h resource.try(:country)
+  %dt.label= 'Email'
+  %dd.email= h resource.try(:email)
+  %dt.label= 'Telephone'
+  %dd.tel= h resource.try(:tel)
+  %dt.label= 'Is client'
+  %dd.is_client= h resource.try(:is_client)
+  %dt.label= 'Body Length'
+  %dd.body_length= h resource.try(:body_length)
+  %dt.label= 'Body Height (cm)'
+  %dd.body_height= h resource.try(:body_height)
+  %dt.label= 'Body Weight (kg)'
+  %dd.body_weight= h resource.try(:body_weight)
+  %dt.label= 'Is supplier'
+  %dd.is_supplier= h resource.try(:is_supplier)
+  %dt.label= 'Company Name'
+  %dd.company_name= h resource.try(:company_name)
+  
+%h2.heading
+  = "Measurement information"
+= link_to 'Add measurement information', add_measurement_path(resource)
+%table.data_list
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.item_type= 'Item Type'
+      %th.value= 'Value'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - resource.contact_measurement_infos.each do |info|
+      = render 'measurement_info', :resource => info
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

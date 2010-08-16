@@ -1,0 +1,9 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.item_type_id= h resource.item_type.try(:name)
+  %td.name= h resource.try(:name)
+  %td.amount= h resource.try(:amount)
+  %td.required=((resource.is_required) ? 'Yes' : 'No')
+  %td.actions
+    = link_to 'Show', resource_path(resource)
+    = link_to 'Edit', edit_resource_path(resource)
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

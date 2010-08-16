@@ -1,0 +1,13 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.time
+    = short_time resource.created_at
+  %td.orderer= h resource.try(:orderer)
+  %td.referrer= h resource.try(:referrer)
+  %td.items= h resource.try(:items_cache)
+  %td.exchange_rate= h resource.try(:exchange_rate)
+  %td.total= h resource.try(:total)
+  %td.remarks= h resource.try(:remarks)
+  %td.actions
+    = link_to 'Show', resource_path(resource)
+    = link_to 'Edit', edit_resource_path(resource)
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

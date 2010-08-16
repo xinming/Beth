@@ -1,0 +1,18 @@
+%h1.heading
+  = "Inventory summaries"
+  
+%p.actions
+
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.time= "Updated"
+      %th.inventory_item_type_id= 'Inventory item type'
+      %th.amount= 'Amount'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

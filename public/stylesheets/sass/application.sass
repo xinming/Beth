@@ -1,0 +1,439 @@
+body
+  background-color: #eee
+  color: #333
+
+a
+  color: #257FD0
+  &:hover
+    color: #333
+
+li
+  list-style: none
+  margin: 0
+ol, ul
+  margin-bottom: 0
+#top
+  padding: 0.75em 0
+  background-color: #123456
+  color: #eee
+  margin-bottom: 1.5em
+  h1
+    color: #fff
+    font-size: 15px
+    display: inline
+    text-shadow: 0px -1px 1px #111
+  img
+    vertical-align: -3px
+    margin-right: 5px
+  a
+    font-size: 11px
+
+#top_logo
+  text-align: left
+
+#top_menu
+  text-align: right
+
+#notifications ul li
+  margin-left: 0
+  list-style: none
+  cursor: pointer
+  background-color: #fff
+  margin-bottom: 0.375em
+  padding: 0.375em 0.75em
+  border: 1px solid #ccc
+  -webkit-box-shadow: 0px 3px 4px #ccc
+  -moz-box-shadow: 0px 3px 4px #ccc
+  &.error
+    background-color: #fcc
+    border-color: #f99
+  &.warning
+    background-color: #ffc
+    border-color: #ff0
+  &.notice
+    background-color: #cfc
+    border-color: #0d0
+  &:hover
+    background-image: url("/images/icons/grey_cross.png")
+    background-position: 915px center
+    background-repeat: no-repeat
+  ul li
+    margin-left: 20px
+    list-style: circle
+  ol li
+    margin-left: 20px
+    list-style: decimal
+
+#sidebar
+  li
+    margin-left: 0
+    list-style: none
+    a
+      &.title
+        text-decoration: none
+        color: #333
+        display: block
+        padding: 0.375em 10px
+        background: #eeeeee url("/images/white-line.png") repeat-x top center
+        border: 1px solid #ccc
+        border-bottom-width: 0
+      &:hover
+        background-color: #dfdfdf
+      &.active
+        background-color: #ccc
+        border: 1px solid #aaa
+      &.title img
+        vertical-align: -3px
+        margin-right: 5px
+    &.first a.title
+      /* Bottom borders is not rounded.
+      -moz-border-radius-topleft: 5px
+      -webkit-border-top-left-radius: 5px
+      -moz-border-radius-topright: 5px
+      -webkit-border-top-right-radius: 5px
+    &.last a.title
+      /* Top border is not rounded.
+      border-bottom-width: 1px
+      -webkit-border-bottom-left-radius: 5px
+      -moz-border-radius-bottomleft: 5px
+      -moz-border-radius-bottomright: 5px
+      -webkit-border-bottom-right-radius: 5px
+    a.toggle
+      cursor: pointer
+      display: block
+      float: right
+      margin-top: -21px
+      margin-right: 5px
+      width: 13px
+      height: 13px
+      background: url("/images/icons/bullet_arrow_down.png") no-repeat -1px -1px
+      padding: 1px
+      &:hover
+        display: block
+        background-color: #ccc
+        -moz-border-radius: 4px
+        -webkit-border-radius: 4px
+        border: 1px solid #999
+        padding: 0px
+        -webkit-box-shadow: 0px -1px 1px #444
+        -moz-box-shadow: 0px -1px 1px #444
+    &.expanded a.toggle
+      background-image: url("/images/icons/bullet_arrow_up.png")
+      background-position: -1px -2px
+      &:hover
+        background-color: #ccc
+    .content
+      display: none
+    &.expanded
+      a.title
+        border-bottom-width: 1px
+      .content
+        display: block
+    &.last.expanded
+      a.title
+        -webkit-border-bottom-left-radius: 0
+        -moz-border-radius-bottomleft: 0
+        -moz-border-radius-bottomright: 0
+        -webkit-border-bottom-right-radius: 0
+      .bottom
+        background-color: #fff
+        height: 5px
+        border: 1px solid #ccc
+        border-top: none
+        -webkit-border-bottom-left-radius: 5px
+        -moz-border-radius-bottomleft: 5px
+        -moz-border-radius-bottomright: 5px
+        -webkit-border-bottom-right-radius: 5px
+    .content
+      background-color: #fff
+      border: 1px solid #ccc
+      border-bottom: none
+      border-top: none
+      li a, p
+        padding: 0.375em 10px
+      li
+        a
+          display: block
+          font-size: 13px
+          text-decoration: none
+          &:hover
+            background-color: #def
+        &.active a
+          background-color: #efefef
+          color: #333
+        a img
+          vertical-align: -3px
+          margin-right: 5px
+      ul
+        margin-bottom: 0
+      p
+        color: #666
+        margin-bottom: 0
+        font-size: 10px
+        padding: 0.75em 10px
+        em
+          display: block
+          font-weight: bold
+          font-style: normal
+          margin-bottom: 2px
+    &.last .content
+      border-bottom: 1px solid #ccc
+      padding-bottom: 0.375em
+      -webkit-border-bottom-left-radius: 5px
+      -moz-border-radius-bottomleft: 5px
+      -moz-border-radius-bottomright: 5px
+      -webkit-border-bottom-right-radius: 5px
+
+/* Sidebar Block Titles
+
+/* Sidebar Expandable Toggle
+
+/* Sidebar Block Content
+
+/* You need to add a div for bottom if the last item is expanded
+
+#main
+  h1
+    text-shadow: 0px 2px 1px #fff
+    img
+      width: 25px
+      height: 25px
+      vertical-align: -3px
+      margin-right: 10px
+  .box
+    background-color: #fff
+    border: 1px solid #ccc
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    padding: 0
+    h1, h2
+      -moz-border-radius-topleft: 5px
+      -webkit-border-top-left-radius: 5px
+      -moz-border-radius-topright: 5px
+      -webkit-border-top-right-radius: 5px
+      font-size: 15px
+      padding: 3px 10px
+      text-align: center
+      font-weight: bold
+      margin-bottom: 0px
+      background: #ccc url("/images/white-line.png") top center repeat-x
+      border-bottom: 1px solid #aaa
+      text-shadow: 0px 1px 0px #fff
+    h1
+      font-size: 18px
+    p
+      margin-bottom: 0
+  .clear
+    height: 20px
+
+  #actions_bottom
+    li
+      float: left
+
+#shortcuts
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border: 1px solid #ccc
+  width: 38px
+  background: #eeeeee url("/images/white-line.png") repeat-x top center
+  &:hover
+    background-color: #ddd
+    border: 1px solid #999
+  ul
+    margin: 0.75em 0
+  li
+    list-style: none
+    margin-left: 0
+    margin-bottom: 0.375em
+    text-align: center
+    a
+      text-decoration: none
+      span
+        display: none
+    &.seperator
+      border-top: 1px solid #ccc
+      border-bottom: 1px solid #fff
+      margin: 10px 5px
+  &:hover li.seperator
+    border-top: 1px solid #999
+
+/*#shortcuts li a:hover span { display: block; position: relative; right: 70px; bottom: 20px; height: 0;}
+
+#footer
+  p
+    font-size: 11px
+    color: #666
+    h1
+      font-size: 11px
+      display: inline
+    a
+      text-transform: uppercase
+  .right p
+    text-align: right
+
+/* Buttons
+
+a.button
+  background: black url("/images/button-overlay.png") repeat-x
+  -moz-border-radius: 3px
+  -webkit-border-radius: 5px
+  color: #ccc
+  text-shadow: 0px -1px 1px #111
+  border: none
+  padding: 3px 5px
+  text-decoration: none
+  font-weight: bold
+  cursor: pointer
+  &:hover
+    color: #fff
+    background-color: #111
+
+/* Buttons Colors
+
+.button
+  &.red, &.green, &.blue
+    color: #fff
+  &.red
+    text-shadow: 0px -1px 1px #c00
+    background-color: #d00
+
+a.button.red:hover
+  background-color: #f00
+
+.button.green
+  text-shadow: 0px -1px 1px #0c0
+  background-color: #0d0
+
+a.button.green:hover
+  background-color: #0f0
+
+.button.blue
+  text-shadow: 0px -1px 1px #00c
+  background-color: #00d
+
+a.button.blue:hover
+  background-color: #00f
+  
+
+
+
+
+
+
+
+
+
+a.add_link, a.back_link, a.edit_link, a.delete_link, a.check_link
+  padding-left: 31px !important
+  padding-right: 5px !important
+a.add_link
+  background: url('/images/add.png') 10px center no-repeat
+a.back_link
+  background: url('/images/back.png') 10px center no-repeat
+a.edit_link
+  background: url('/images/edit.png') 10px center no-repeat 
+a.delete_link
+  background: url('/images/delete.png') 10px center no-repeat
+a.check_link
+  background: url('/images/icons/pencil.png') 10px center no-repeat
+  
+  
+  
+  
+table.data_list
+  border-collapse: collapse
+  width: 100%
+  tbody tr:hover
+    background: #ddd
+  td, th
+    padding: 3px 6px
+    border: 1px solid #ddd
+    border-right: none
+    border-left: none
+    text-transform: capitalize
+  th
+    font-weight: bold
+    border-bottom: 2px solid #666
+    border-left: none
+    color: #555
+    border-top: none
+  td.actions
+    width: 32px
+    a
+      display: block
+      height: 16px
+      width: 16px
+      float: left
+      clear: both
+      font-size: 11px
+      font-weight: bold
+  td.preview
+    width: 48px !important
+    padding: 0
+    height: 48px
+    text-align: center
+    img
+      display: block
+      height: 48px
+      width: 48px
+      float: left
+  td.incoming, td.outgoing, td.tranferring
+    width: 16px
+  td a
+    text-transform: capitalize
+  td.incoming
+    background: #B4CF66
+  td.outgoing
+    background: #FF5A33
+  td.transferring
+    background: #FFEC5C
+
+
+
+li.commit
+  margin-left: 170px
+  input
+    padding: 6px 5px
+
+#sidebar ul, #sidebar ol
+  margin-bottom: 30px
+
+#filter
+  
+  select
+    padding: 3px 3px
+    display: block
+    float: left
+  input
+    padding: 3px 3px
+    float: left
+  a
+    height: 20px
+    background: url("images/")
+
+
+dt.label
+  font-weight: bold
+  width: 100px
+  display: block
+  float: left
+dd
+  clear: both
+.show_list
+  li 
+    padding: 10px 20px
+    border-bottom: 1px solid #ddd
+    strong
+      width: 100px
+      display: block
+      float: left
+ul.item
+  padding-left: 60px
+  li 
+    padding: 2px 10px !important
+    border: none !important
+  label
+    float: none
+    display: inline
+    input, textarea
+      display: inline

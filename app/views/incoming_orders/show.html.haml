@@ -1,0 +1,42 @@
+%h1.heading
+  = "Incoming order %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Customer'
+  %dd.customer_id= h resource.customer.try(:name)
+  %dt.label= 'Date'
+  %dd.date= h resource.try(:date)
+  
+  -resource.items.each do |item|
+    %h2
+      = item.item_type
+      = link_to 'Remove item', item, :confirm => 'Are you sure?', :method => :delete
+    -item.item_type.item_type_costs.each do |tc|
+      = link_to "Add #{tc.name}", add_cost_path(item, tc)
+    %table.data_list
+      %thead.header
+        %tr
+          %th.name= 'Name'
+          %th.cost= 'Cost'
+          %th.actions= 'Actions'
+      %tbody.costs.resources
+        -item.costs.each do |cost|
+          - content_tag_for(:tr, cost, :class => cycle(:odd, :even)) do
+            %td.name= cost.item_type_cost.name
+            %td.amount= cost.amount
+            %td.actions
+              = link_to 'Edit', edit_cost_path(cost)
+              = link_to 'Destroy', cost, :confirm => 'Are you sure?', :method => :delete
+        %tr
+          %td.name='Total'
+          %td.amount= item.price
+          %td
+        
+  
+- ItemType.all.each do |item_type|
+  = link_to "Add #{item_type}", add_item_path(resource, item_type)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

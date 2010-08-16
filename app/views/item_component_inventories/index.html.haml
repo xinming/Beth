@@ -1,0 +1,18 @@
+%h1.heading
+  = "Item component inventories"
+  
+%p.actions
+  = link_to 'New Item component inventory', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.id= "Id"
+      %th.inventory= 'Inventory Item'
+      %th.amount= 'Amount'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

@@ -1,0 +1,20 @@
+%h1.heading
+  = "Incoming orders"
+  
+%p.actions
+  = link_to 'New Incoming order', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.date= 'Date'
+      %th.customer_name= 'Customer'
+      %th.customer_code= 'Reference No.'
+      %th.categoy= 'Categories'
+      %th.price= 'Price'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

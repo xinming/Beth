@@ -1,0 +1,23 @@
+%h1.heading
+  = "Item type %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Name'
+  %dd.name= h resource.try(:name)
+  -# unless resource.component_groups.empty?
+    %dt.label= 'Styles for this item type'
+    %dd.component_groups
+      %ul
+        - resource.component_groups.each do |cg|
+          %li= cg
+  -# unless resource.measurement_infos.empty?
+    %dt.label= 'Measurements for this item type'
+    %dd.measurement_infos
+      %ul
+        - resource.measurement_infos.each do |cg|
+          %li= cg
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

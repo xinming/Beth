@@ -1,0 +1,15 @@
+%h1.heading
+  = "Item %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Order #'
+  %dd.order_id= h resource.try(:order_id)
+  %dt.label= 'Item Type'
+  %dd.item_type= h resource.try(:item_type)
+
+
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

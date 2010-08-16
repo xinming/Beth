@@ -1,0 +1,9 @@
+basic:
+  code: Hello
+  name: Hello
+  description: Lorem ipsum dolor sit amet...
+  price_per_unit: 9.99
+  unit: Hello
+  photo_file_name: Hello
+  photo_content_type: Hello
+  photo_file_size: 1

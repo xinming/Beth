@@ -1,0 +1,17 @@
+%h1.heading
+  = "Customers"
+  
+%p.actions
+  = link_to 'New Customer', new_resource_path
+  
+%table.data_list
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.code= 'Reference No.'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

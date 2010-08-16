@@ -1,0 +1,19 @@
+- form.inputs do
+  - form.inputs :name => "Information" do
+    = form.input :contact_group, :label => 'Contact Group'
+    = form.input :commission, :label => 'Commission %', :hint => 'Ignore if belonging to a contact group'
+    = form.input :name, :label => 'Name'
+    = form.input :address, :label => 'Address'
+    = form.input :country, :label => 'Country'
+    = form.input :email, :label => 'Email'
+    = form.input :tel, :label => 'Telephone'
+
+  = form.input :is_client, :label => 'Is client'
+  - form.inputs :name => "Measurements" do
+    = form.input :body_length, :label => "Body Length"
+    = form.input :body_height, :label => "Body Height (cm)"
+    = form.input :body_weight, :label => "Body Weight (kg)"
+
+  = form.input :is_supplier, :label => 'Is supplier'
+  - form.inputs :name => "Supplier Information" do
+    = form.input :company_name, :label => 'Company Name'

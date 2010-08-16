@@ -1,0 +1,15 @@
+
+%ul.item
+  %li
+    %strong= form.object.item_type
+    = "(" + remove_item_link(form) + ")"
+    = form.input :item_type_id, :as => :hidden
+
+    =# raise form.object.item_type.item_type_costs.inspect
+    %ul
+    - form.object.item_type.item_type_costs.required.each do |tc|
+      %li#costs
+      = "#{tc.name} #{tc.amount}"
+    - form.object.item_type.item_type_costs.optional.each do |tc|
+      = add_cost_link(tc, form)
+

@@ -1,0 +1,18 @@
+%h1.heading
+  = "Item types"
+  
+%p.actions
+  = link_to 'New Item type', new_resource_path
+  =# link_to 'Component Groups', component_groups_url
+  =# link_to 'Measurement Infos', measurement_infos_url
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)

@@ -1,0 +1,17 @@
+- form.inputs do
+  = form.input :orderer, :label => "Orderer", :collection => Contact.clients
+  = form.input :referrer, :label => "C/O"
+
+  -# ItemType.all.each do |it|
+    = link_to_remote "Add #{it.name}", :update => "items", :position => :bottom, :url => add_item_order_path(:item_type => it.id, :child_index => 0)
+  %li#items
+    %strong Items
+    - form.semantic_fields_for :items do |item|
+      = render :partial => 'item_form', :locals => { :form => item }
+  
+  - ItemType.all.each do |item_type|
+    = add_item_link(item_type, form)
+
+  = form.input :exchange_rate, :label => 'Exchange rate'
+  = form.input :tax, :label => 'Tax'
+  = form.input :remarks, :label => 'Remarks'

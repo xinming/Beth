@@ -1,0 +1,8 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.name= h resource.measurement_info.try(:name)
+  %td.item_type= h resource.measurement_info.try(:item_type)
+  %td.value= h resource.try(:value)
+
+  %td.actions
+    = link_to 'Edit', edit_contact_measurement_info_path(resource)
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

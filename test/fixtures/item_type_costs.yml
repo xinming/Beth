@@ -1,0 +1,4 @@
+basic:
+  item_type_id: 1
+  name: Hello
+  amount: 9.99
